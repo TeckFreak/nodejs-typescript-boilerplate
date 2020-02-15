@@ -1,0 +1,31 @@
+{
+  "name": "nodejs-typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "A simple and most basic boilerplate for beginners to get started with NodeJS in TypeScript.",
+  "main": "./build/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeckFreak/nodejs-typescript-boilerplate.git"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "boilerplate"
+  ],
+  "author": "TeckFreak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeckFreak/nodejs-typescript-boilerplate/issues"
+  },
+  "homepage": "https://github.com/TeckFreak/nodejs-typescript-boilerplate#readme",
+  "dependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/express": "^4.17.2",
+    "@types/node": "^13.7.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
