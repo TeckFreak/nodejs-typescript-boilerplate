@@ -5,28 +5,37 @@ import { MainController } from "../controllers/main.controller"
 /**
  * Class to handle and manage all the routes.
  */
-export class MainRoute
-{
+export class MainRoute {
     mainController: MainController = new MainController();              // User controller.
     app: express.Application;                                           // Express app.
 
-    constructor(app: express.Application)
-    {
+    constructor(app: express.Application) {
         this.app = app;
     }
 
     /**
      * Initializes all the routes.
      */
-    public initRouters(): void
-    {
+    public initRouters(): void {
         this.initBaseRoutes();
+        // this.initMethodSpecificRouter();
     }
 
-    private initBaseRoutes(): void
-    {
+    /**
+     * Handles all types of request methods and route it to single controller method.
+     */
+    private initBaseRoutes(): void {
+        this.app.use('/', this.mainController.showHomePage);
+    }
+
+    /**
+     * Handle specific request methods and route it to different controller methods.
+     */
+    private initMethodSpecificRouter(): void {
         this.app.route('/')
-            .post(this.mainController.showWelcomeMessageOnPost)                         // POST Request Received. 
-            .get(this.mainController.showWelcomeMessageOnGet);                          // GET Request Received.
+            .post(this.mainController.showPOSTPage)
+            .get(this.mainController.showGETPage)
+            .put(this.mainController.showPUTPage)
+            .delete(this.mainController.showDELETEPage);
     }
 }
